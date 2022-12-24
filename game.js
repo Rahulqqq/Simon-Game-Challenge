@@ -6,7 +6,7 @@ let gamePattern = [];
 let userClickedPattern = [];
 let started = false;
 
-$(document).keypress(function () {
+$(document).keydown(function () {
     if (!started){
         $("#level-title").text("level " + level);
         nextSequence();
@@ -80,7 +80,7 @@ function playSound(name){
     audio.play();
 
 }
- function startOver() {
+ function startOver(){
     level = 0;
     gamePattern = [];
     started = false;
