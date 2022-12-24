@@ -1,4 +1,4 @@
-let buttonColors = ["red", "blue", "green", "yellow"];
+let buttonColors = ["red", "blue", "green", "yellow", "orange", "black", ];
 
 let level = 0;
 
@@ -6,7 +6,7 @@ let gamePattern = [];
 let userClickedPattern = [];
 let started = false;
 
-$(document).keydown(function () {
+$(document).keypress(function () {
     if (!started){
         $("#level-title").text("level " + level);
         nextSequence();
@@ -28,10 +28,10 @@ $(".btn").click(function() {
 
 //GamePattern and userClickedPattern
 
-function checkAnswer(currentLevel){
+function checkAnswer(currentLevel) {
 
-    if(gamePattern[currentLevel] === userClickedPattern[currentLevel]){
-        if(userClickedPattern.length === gamePattern.length){
+    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]){
+        if (userClickedPattern.length === gamePattern.length){
         setTimeout(function() {
             nextSequence();
         }, 1000);
@@ -39,10 +39,11 @@ function checkAnswer(currentLevel){
     }
     } else {
         playSound("wrong");
-        $("body").addClass("game-Over");
+        $("body").addClass("game-over");
         $("#level-title").text("Game Over, Press Any Key to Restart");
-        setTiomeout (function () {
-            $("body").removeClass("game-Over");
+
+        setTimeout (function () {
+            $("body").removeClass("game-over");
         }, 200);
 
         startOver();
@@ -56,7 +57,7 @@ function nextSequence(){
     level++;                           //level score increase
     $("#level-title").text("level " + level);  
 
-    let randomNumber1 = Math.floor(Math.random() * 4);  // Generate a random number
+    let randomNumber1 = Math.floor(Math.random() * 7);  // Generate a random number
 
     let randomChosenColor = buttonColors[randomNumber1] ;
 
@@ -67,7 +68,7 @@ function nextSequence(){
 }
 
     //Animate add and remove
-function animatePress(currentColor){
+function animatePress(currentColor) {
     $("#" + currentColor).addClass("pressed");
     setTimeout(function() {
         $("#" + currentColor).removeClass("pressed");
@@ -75,12 +76,12 @@ function animatePress(currentColor){
 }
 
 //playSound
-function playSound(name){
+function playSound(name) {
     let audio = new Audio("sounds/" + name + ".mp3");   //play audio
     audio.play();
 
 }
- function startOver(){
+ function startOver() {
     level = 0;
     gamePattern = [];
     started = false;

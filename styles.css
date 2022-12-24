@@ -39,12 +39,20 @@ body {
   background-color: green;
 }
 
-.blue {
-  background-color: blue;
+.white {
+  background-color: white;
 }
 
 .yellow {
   background-color: yellow;
+}
+
+.orange{
+  background-color:orange;
+}
+
+.black{
+  background-color: black;
 }
 
 .pressed {
