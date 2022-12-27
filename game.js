@@ -1,4 +1,4 @@
-let buttonColors = ["red", "blue", "green", "yellow", "orange", "black", ];
+let buttonColors = ["red", "blue", "green", "yellow" ];
 
 let level = 0;
 
@@ -57,7 +57,7 @@ function nextSequence(){
     level++;                           //level score increase
     $("#level-title").text("level " + level);  
 
-    let randomNumber1 = Math.floor(Math.random() * 7);  // Generate a random number
+    let randomNumber1 = Math.floor(Math.random() * 4);  // Generate a random number
 
     let randomChosenColor = buttonColors[randomNumber1] ;
 
@@ -85,6 +85,7 @@ function playSound(name) {
     level = 0;
     gamePattern = [];
     started = false;
+    
  }
 
 
