@@ -61,8 +61,9 @@ function nextSequence(){
     let randomNumber1 = Math.floor(Math.random() * 4); 
 
     let randomChosenColor = buttonColors[randomNumber1] ;
-
-    gamePattern.push(randomChosenColor);  //push a color in empty array
+    
+     //push a color in empty array
+    gamePattern.push(randomChosenColor); 
 
     $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);  //Animate
     playSound(randomChosenColor)
