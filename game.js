@@ -56,8 +56,9 @@ function nextSequence(){
     userClickedPattern = [];
     level++;                           //level score increase
     $("#level-title").text("level " + level);  
-
-    let randomNumber1 = Math.floor(Math.random() * 4);  // Generate a random number
+    
+     // Generate a random number
+    let randomNumber1 = Math.floor(Math.random() * 4); 
 
     let randomChosenColor = buttonColors[randomNumber1] ;
 
