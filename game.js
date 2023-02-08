@@ -26,7 +26,7 @@ $(".btn").click(function() {
 
 });
 
-//GamePattern and userClickedPattern -
+//GamePattern and userClickedPattern 
 
 function checkAnswer(currentLevel) {
 
@@ -89,13 +89,3 @@ function playSound(name) {
     started = false;
     
  }
-
-
-
-    
-
-
-
-
-
-
